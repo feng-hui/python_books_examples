@@ -178,6 +178,20 @@ B、制表符、换行符、回车符和\对应的字节，使用转义序列\t�
 
 C、其他字节的值，使用十六进制的转义序列(例如：\x00是空字节)。
 
+4、如何构建bytes的实例【具体可以参见：ch4_create_bytes_or_bytearray_instance】
+
+A、一个str对象和一个encoding关键字参数；
+
+B、一个可迭代对象，提供0~255之间的数值；
+
+C、一个实现缓冲协议的对象（如bytes、bytearray、memoryview、array.array），把源对象中的字节序列复制到新建的二进制序列中。
+
+4、结构体(struct)和内存视图(memoryview)
+
+struct模块提供了一些函数，把打包的字节序列转换成不同类型字段组成的元组。
+
+struct模块能处理bytes、bytearray和memoryview对象。
+
 
 
       
