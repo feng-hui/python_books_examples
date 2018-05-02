@@ -1,0 +1,2 @@
+In this chapter,you learned how to work with Django forms and model forms.You created a system to share your sites's
+content by e-mail and you created a comment system for your blog.
