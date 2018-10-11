@@ -28,8 +28,9 @@ class BingoCall(object):
 
 if __name__ == "__main__":
 
-    bingo = BingoCall(range(3))
+    bingo = BingoCall(range(10000))
+    print(callable(bingo))
     print(bingo.pick())
     print(bingo())
     print(bingo())
-    print(bingo())
+    # print(bingo())
