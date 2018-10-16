@@ -2,9 +2,11 @@
 
 基于python3,不兼容python2
 
-## 第三章 字典和集合[全部总结](https://github.com/feng-hui/fluent_python_examples/blob/master/summary/chapter03_summary.md)
+## 第三章 字典和集合
 
-#### 1、魔术方__missing__
+[全部总结](https://github.com/feng-hui/fluent_python_examples/blob/master/summary/chapter03_summary.md)
+
+#### 1、魔术方法__missing__
 
 __missing__ 主要使用在字典查询键值找不到键值的时候
 
