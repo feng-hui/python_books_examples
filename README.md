@@ -32,4 +32,11 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 [ch05_introspection_function](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_introspection_function.py)
 
+## 第六章 使用一等函数实现设计模式
+
+#### 1、order 购物订单模型
+
+经典的“策略”模式，使用[“策略”设计模式](https://baike.baidu.com/item/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/646307?fr=aladdin)处理订单折扣
+
+[ch06_order](https://github.com/feng-hui/fluent_python_examples/blob/master/ch06_order.py)
 
