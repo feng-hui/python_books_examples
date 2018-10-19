@@ -3,7 +3,7 @@
 # @time   : 18-10-18 下午8:39
 # @author : Feng_Hui
 # @email  : capricorn1203@126.com
-from abc import ABC, abstractclassmethod
+from abc import ABC
 from collections import namedtuple
 
 Customer = namedtuple('Customer', 'name fidelity')
@@ -45,10 +45,10 @@ class Order(object):
         return fmt.format(self.customer.name, self.total(), self.due())
 
 
-class Promotion(object):
+class Promotion(ABC):
 
     @staticmethod
-    def discount(self):
+    def discount(self, order):
         """返回折扣金额"""
 
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     ann = Customer('Ann Smith', 1100)
     order_cart = [
         LineItem('banana', 4, .5),
-        LineItem('apple', 10 , 1.5),
+        LineItem('apple', 10, 1.5),
         LineItem('watermelon', 5, 5.0)
     ]
     order_cart2 = [
