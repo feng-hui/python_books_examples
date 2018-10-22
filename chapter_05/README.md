@@ -64,9 +64,9 @@ reduce(add, range(100))
 
 匿名函数： 通过lambda关键字在Python表达式内创建匿名函数。
 
-** 除了作为参数传递给高阶函数之外，Python很少使用匿名函数。 **
+** 除了作为参数传递给高阶函数之外，Python很少使用匿名函数。**
 
-** 由于句法上的限制，非平凡的lambda表达式要么难以阅读，要么无法写出。 **
+** 由于句法上的限制，非平凡的lambda表达式要么难以阅读，要么无法写出。**
 
 7、可调用对象
 
@@ -74,19 +74,19 @@ reduce(add, range(100))
 
 (2)Python数据模型文档列出7种可调用对象
 
-    * 用户定义的函数：使用def语句或lambda表示创建；
+* 用户定义的函数：使用def语句或lambda表示创建；
 
-    * 内置函数：使用C语言(CPython)实现的函数,如len或time.strftime
+* 内置函数：使用C语言(CPython)实现的函数,如len或time.strftime
 
-    * 内置方法：使用C语言实现的方,如：dict.get；
+* 内置方法：使用C语言实现的方,如：dict.get；
 
-    * 方法：在类的定义体中定义的函数；
+* 方法：在类的定义体中定义的函数；
 
-    * 类：调用类时会运行类的__new__方法创建一个实例,然后运行__init__方法初始化实例,最后把实例返回给调用方。
+* 类：调用类时会运行类的__new__方法创建一个实例,然后运行__init__方法初始化实例,最后把实例返回给调用方。
 
-    * 类的实例：如果类定义了__call__方法，那么它的实例可以作为函数调用[详情参见代码](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_05/ch05_bingocall.py)；
+* 类的实例：如果类定义了__call__方法，那么它的实例可以作为函数调用[详情参见代码](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_05/ch05_bingocall.py)；
 
-    * 生成器函数：使用yield关键字的函数或方法。调用生成器函数返回的是生成器对象。
+* 生成器函数：使用yield关键字的函数或方法。调用生成器函数返回的是生成器对象。
 
 8、函数内省(function introspection)
 
