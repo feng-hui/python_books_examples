@@ -6,7 +6,7 @@
 from inspect import signature
 
 
-def clip(text, max_len=80) -> str:
+def clip(text: str, max_len: 'int > 0'=80) -> str:
     """
     该函数主要用于截取一段文本
     演示如何获取函数内省相关的值
@@ -34,16 +34,20 @@ if __name__ == "__main__":
 
     # 获取函数的默认参数
     print(clip.__defaults__)
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     print(clip.__code__)  # 编译成字节码的函数元数据和函数定义体
     print(clip.__code__.co_varnames)  # 函数的参数和函数体中的自定义对象
     print(clip.__code__.co_argcount)  # 函数的参数个数,不包含*和**的变长参数
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     # 返回函数的注解
     print(clip.__annotations__)
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     # 提取函数的签名
     sig = signature(clip)
     print(sig, type(sig))
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
     for name, param in sig.parameters.items():
         print(param.kind, ':', name, '=', param.default)

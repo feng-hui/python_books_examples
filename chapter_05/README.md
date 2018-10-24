@@ -90,7 +90,58 @@ reduce(add, range(100))
 
 8、函数内省(function introspection)
 
-未完待续
+(1)什么是内省？内省是对属性、事件的一种缺省处理方法。（通俗地来讲，当你拿到一个函数对象，可以通过函数内省知道它的属性、参数等信息。）
+
+(2)使用dir(object)可以获得所有函数对象的属性。
+
+(3)函数特有的属性
+
+|名称|类型|说明
+
+|__annotations__|dict|参数和返回值的注解
+
+|__call__|method-wrapper|实现()运算符；即可调用对象协议
+
+|__closure__|tuple|函数闭包,即自由变量的绑定
+
+|__code__|code|编译成字节码
+
+|__defaults__
+
+|__get__
+
+|__globals__
+
+|__kwdefaults__
+
+|__name__
+
+|__qualname__
+
+9、仅限关键字参数(keyword-only argument)
+
+* 位置参数或定位参数,支持list和set
+
+** 关键字参数,支持dict
+
+类似cls=None, 关键字参数的一种,如果在参数强制必须传入值,则可以写成(a, *, b), 实参为类似(1, b=2)。
+
+10、函数注解
+
+`def clip(text: str, max_len: 'int > 0'=80) -> str: pass`
+
+类似上述写法即为函数注解。
+
+parameter: type
+
+parameter: 'expression'=value
+
+function -> type
+
+函数声明的各个参数可以在:后增加注解表达式。如果参数有默认值,注解放在参数名和等号之间。
+
+注解返回值，在)和函数声明末尾：之间添加一个->和一个表达式。
+
 
 
 
