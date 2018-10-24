@@ -106,17 +106,6 @@ reduce(add, range(100))
 
 |__code__|code|编译成字节码
 
-|__defaults__
-
-|__get__
-
-|__globals__
-
-|__kwdefaults__
-
-|__name__
-
-|__qualname__
 
 9、仅限关键字参数(keyword-only argument)
 
