@@ -110,7 +110,7 @@ reduce(add, range(100))
 
 9、仅限关键字参数(keyword-only argument)
 
-* 位置参数或定位参数,支持list和set
+\* 位置参数或定位参数,支持list和set
 
 ** 关键字参数,支持dict
 
@@ -148,6 +148,17 @@ POSITIONAL_ONLY| 仅限定位参数
 12、支持函数式编程的模块
 
 operator模块,常用的数学相关的模块add、mul等
+
+Name | Academy | score
+- | :-: | -:
+Harry Potter | Gryffindor| 90
+Hermione Granger | Gryffindor | 100
+Draco Malfoy | Slytherin | 90
+---------------------
+作者：tuxingchen6
+来源：CSDN
+原文：https://blog.csdn.net/tuxingchen6/article/details/55222951
+版权声明：本文为博主原创文章，转载请附上博文链接！
 
 
 
