@@ -149,3 +149,9 @@ function -> type
 12、支持函数式编程的模块
 
 operator模块,常用的数学相关的模块add、mul等
+
+|Tables         | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
