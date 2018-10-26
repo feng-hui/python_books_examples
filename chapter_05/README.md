@@ -96,17 +96,17 @@ reduce(add, range(100))
 
 (3)函数特有的属性([参见代码](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_05/ch05_attribute_of_function.py))
 
-| 名称    | 类型    | 说明
-| __annotations__   | dict  | 参数和返回值的注解
-| __call__  | method-wrapper    | 实现()运算符；即可调用对象协议
-| __closure__   | tuple | 函数闭包,即自由变量的绑定
-| __code__  | code  | 编译成字节码
-| __defaults__  | tuple | 形式参数的默认值
-| __get__   | method-wrapper    | 实现只读描述协议（参见第20章）
-| __globals__   | dict  | 函数所在模块的全局变量
-| __kwdefaults__    | dict  | 仅限关键字形式参数的默认值
-| __name__  | str | 函数名称
-| __qualname__  | str   | 函数的限定名称,如Random.choice（参阅PEP3155）
+| 名称    | 类型    | 说明|
+| __annotations__   | dict  | 参数和返回值的注解|
+| __call__  | method-wrapper    | 实现()运算符；即可调用对象协议|
+| __closure__   | tuple | 函数闭包,即自由变量的绑定|
+| __code__  | code  | 编译成字节码|
+| __defaults__  | tuple | 形式参数的默认值|
+| __get__   | method-wrapper    | 实现只读描述协议（参见第20章）|
+| __globals__   | dict  | 函数所在模块的全局变量|
+| __kwdefaults__    | dict  | 仅限关键字形式参数的默认值|
+| __name__  | str | 函数名称|
+| __qualname__  | str   | 函数的限定名称,如Random.choice（参阅PEP3155）|
 
 9、仅限关键字参数(keyword-only argument)
 
@@ -138,17 +138,14 @@ function -> type
 
 参数的种类包括：
 
-名称|解释
-POSITIONAL_OR_KEYWORD| 可以通过定位参数或关键字参数传入的形参（多数Python函数的参数属于此类）
-VAR_POSITIONAL| 定位参数元组
-VAR_KEYWORD| 关键字参数字典
-KEYWORD_ONLY| 仅限关键字参数(Python3新增)
-POSITIONAL_ONLY| 仅限定位参数
+
+|名称|解释|
+|POSITIONAL_OR_KEYWORD| 可以通过定位参数或关键字参数传入的形参（多数Python函数的参数属于此类）|
+|VAR_POSITIONAL| 定位参数元组|
+|VAR_KEYWORD| 关键字参数字典|
+|KEYWORD_ONLY| 仅限关键字参数(Python3新增)|
+|POSITIONAL_ONLY| 仅限定位参数|
 
 12、支持函数式编程的模块
 
 operator模块,常用的数学相关的模块add、mul等
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
