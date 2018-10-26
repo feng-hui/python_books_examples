@@ -96,8 +96,9 @@ reduce(add, range(100))
 
 (3)函数特有的属性([参见代码](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_05/ch05_attribute_of_function.py))
 
-| 名称    | 类型    | 说明|
-| __annotations__   | dict  | 参数和返回值的注解|
+| 名称 | 类型 | 说明 |
+| ------------- |:-------------:| --------------------:|
+| __annotations__   | dict  | 参数和返回值的注解 |
 | __call__  | method-wrapper    | 实现()运算符；即可调用对象协议|
 | __closure__   | tuple | 函数闭包,即自由变量的绑定|
 | __code__  | code  | 编译成字节码|
@@ -140,6 +141,7 @@ function -> type
 
 
 |名称|解释|
+| ------------- |:-------------:|
 |POSITIONAL_OR_KEYWORD| 可以通过定位参数或关键字参数传入的形参（多数Python函数的参数属于此类）|
 |VAR_POSITIONAL| 定位参数元组|
 |VAR_KEYWORD| 关键字参数字典|
@@ -149,9 +151,3 @@ function -> type
 12、支持函数式编程的模块
 
 operator模块,常用的数学相关的模块add、mul等
-
-|Tables         | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
