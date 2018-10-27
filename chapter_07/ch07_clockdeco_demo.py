@@ -5,7 +5,7 @@
 # @email  : capricorn1203@126.com
 import time
 from chapter_07.ch07_simple_decor import clock
-import functools
+from functools import lru_cache
 
 
 @clock
@@ -23,10 +23,10 @@ def fibonacci(n):
     return n if n < 2 else fibonacci(n - 2) + fibonacci(n - 1)
 
 
-@functools.lru_cache()
+@lru_cache()
 @clock
 def fibonacci2(n):
-    return n if n < 2 else fibonacci(n - 2) + fibonacci(n - 1)
+    return n if n < 2 else fibonacci2(n - 2) + fibonacci2(n - 1)
 
 
 if __name__ == "__main__":
@@ -35,6 +35,5 @@ if __name__ == "__main__":
     # print('*' * 40, 'Calling factorial(6)')
     # factorial(6)
     # print('*' * 40, 'Calling fibonacci(6)')
-    # fibonacci(30)
+    # fibonacci(6)
     fibonacci2(6)
-
