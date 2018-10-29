@@ -8,7 +8,7 @@
 registry = set()
 
 
-def register(active=False):
+def register(active=True):
     def decorator(func):
         print('running register (active=%s) -> decorate(%s)'
               % (active, func))
@@ -20,12 +20,12 @@ def register(active=False):
     return decorator
 
 
-@register()
+@register(active=False)
 def f1():
     print('running f1()')
 
 
-@register(active=True)
+@register()
 def f2():
     print('running f2()')
 
