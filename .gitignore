@@ -102,3 +102,6 @@ ENV/
 
 # ignore .idea/
 .idea
+
+images/
+*.bin
