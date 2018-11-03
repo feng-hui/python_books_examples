@@ -6,9 +6,16 @@
 
 #### chapter01 Python 数据模型
 
+* (1) [ch01_nametuple.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_01/ch01_nametuple.py) 具名元组的使用
+
+* (2) [ch01_vector.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_01/ch01_vector.py) 如何构建一个满足需求的向量类？
+
+* (3) [ch01_vector_v2.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_01/ch01_vector_v2.py)
+
 ### [第二部分 数据结构]
 
 #### chapter02 序列构成的数组
+
 
 #### [chapter03 字典和集合](https://github.com/feng-hui/fluent_python_examples/blob/master/summary/chapter03_summary.md)
 
@@ -62,14 +69,32 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 #### chapter07 使用一等函数实现设计模式
 
+* (1)
+
+* (2)
+
+* (3)
+
+* (4)
+
+* (5)
+
+* (6)
+
+* (7)
+
+* (8)
+
+* (9)
+
+
 #### chapter08 对象引用、可变性和垃圾回收
 
-#### [chapter09  符合 Python 风格的对象](https://github.com/feng-hui/fluent_python_examples/tree/master/chapter_09)
+#### chapter09  符合 Python 风格的对象
 
-* [ch09_vector2d.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_vector2d.py) 改造向量类
+* (1) [ch09_vector2d.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_vector2d.py) 改造向量类
 
-* [ch09_vector2d_03.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_vector2d_03.py) 向量类的可散列、私有属性的使用以及`__slots__`的使用
+* (2) [ch09_vector2d_03.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_vector2d_03.py) 向量类的可散列、私有属性的使用以及`__slots__`的使用
 
-* [ch09_the_difference_of_staticmethod_and_classmethod.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_the_difference_of_staticmethod_and_classmethod.py) classmethod和staticmethod的使用
-
+* (3) [ch09_the_difference_of_staticmethod_and_classmethod.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_the_difference_of_staticmethod_and_classmethod.py) classmethod和staticmethod的使用
 
