@@ -69,11 +69,11 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 #### chapter07 使用一等函数实现设计模式
 
-* (1)
+* (1) [ch07_deco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_deco.py) 一个最简单的装饰器
 
-* (2)
+* (2) [ch07_registration.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_registration.py) Python何时执行装饰器
 
-* (3)
+* (3) [ch07_orderdeco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_registration.py) Python何时执行装饰器
 
 * (4)
 
