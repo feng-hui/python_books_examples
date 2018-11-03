@@ -1,8 +1,62 @@
-## 流畅的Python总结
+> 流畅的Python
 
 - [x] 基于Python3,不兼容Python2
 
-### [第一部分 序幕]
+- [x] 目录结构如下
+
+* 第一部分　序幕
+
+    * chapter 01 Python 数据模型
+
+* 第二部分　数据结构
+
+    * chapter 02 序列构成的数组
+
+    * chapter 03 字典和集合
+
+    * chapter 04 文本和字节序列
+
+* 第三部分　把函数视作对象
+
+    * chapter 05 一等函数
+
+    * chapter 06 使用一等函数实现设计模式
+
+    * chapter 07 函数装饰器和闭包
+
+* 第四部分　面向对象惯用法
+
+    * chapter 08 对象引用、可变性和垃圾回收
+
+    * chapter 09 符合 Python 风格的对象
+
+    * chapter 10 序列的修改、散列和切片
+
+    * chapter 11 接口：从协议到抽象基类
+
+    * chapter 12 继承的优缺点
+
+    * chapter 13 正确重载运算符
+
+* 第五部分　控制流程
+
+    * chapter 14 可迭代的对象、迭代器和生成器
+
+    * chapter 15 上下文管理器和 else 块
+
+    * chapter 16 协程
+
+    * chapter 17 使用期物处理并发
+
+    * chapter 18 使用 asyncio 包处理并发
+
+* 第六部分　元编程
+
+    * chapter 19 动态属性和特性
+
+    * chapter 20 属性描述符
+
+    * chapter 21 类元编程
 
 #### chapter01 Python 数据模型
 
@@ -12,12 +66,9 @@
 
 * (3) [ch01_vector_v2.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_01/ch01_vector_v2.py)
 
-### [第二部分 数据结构]
-
 #### chapter02 序列构成的数组
 
-
-#### [chapter03 字典和集合](https://github.com/feng-hui/fluent_python_examples/blob/master/summary/chapter03_summary.md)
+#### chapter03 字典和集合
 
 1、魔术方法__missing__
 
@@ -26,8 +77,6 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 [ch03_the_magic_method_of_missing](https://github.com/feng-hui/fluent_python_examples/blob/master/ch03_the_magic_method_of_missing.py)
 
 #### chpater04 文本和字节序列
-
-### [第三部分 把函数视作对象]
 
 #### chapter05 一等函数
 
@@ -65,28 +114,25 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 #### chapter07 使用一等函数实现设计模式
 
-### [第四部分　面向对象惯用法]
-
 #### chapter07 使用一等函数实现设计模式
 
 * (1) [ch07_deco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_deco.py) 一个最简单的装饰器
 
 * (2) [ch07_registration.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_registration.py) Python何时执行装饰器
 
-* (3) [ch07_orderdeco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_registration.py) Python何时执行装饰器
+* (3) [ch07_orderdeco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_orderdeco.py) 使用装饰器改造“策略”模式
 
-* (4)
+* (4) [ch07_average_oo.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_average_oo.py) 闭包，见代码里的类`Avg`
 
-* (5)
+* (5) [ch07_simple_decor.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_simple_decor.py) 定义一个简单的`clock`装饰器，输出函数的运行时间
 
-* (6)
+* (6) [ch07_clockdeco_demo.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_clockdeco_demo.py) 引入`clock`装饰器，装饰定义好的函数（函数分别为：factorial函数和fibonacci函数）
 
-* (7)
+* (7) [ch07_clockdeco_param.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_clockdeco_param.py) 引入参数进一步丰富装饰器的功能，参数主要为输出的具体格式
 
-* (8)
+* (8) [ch07_parameterized_deco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_parameterized_deco.py) 参数化的装饰器，主要使用的为2中定义的一个`registration`函数
 
-* (9)
-
+* (9)  [ch07_single_dispatch_deco.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_07/ch07_single_dispatch_deco.py) 标准库中的装饰器2-singledispatch的使用，该装饰器的一个显著特征是可以在系统中的任何地方和任何模块中注册专门函数，支持模块化扩展。
 
 #### chapter08 对象引用、可变性和垃圾回收
 
