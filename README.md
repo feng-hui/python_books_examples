@@ -1,4 +1,4 @@
-> 流畅的Python
+> 流畅的Python 总结
 
 - [x] 基于Python3,不兼容Python2
 
@@ -57,6 +57,8 @@
     * chapter 20 属性描述符
 
     * chapter 21 类元编程
+
+- [x] 代码介绍，具体的章节总结可打开对应的章节即可看到
 
 #### chapter01 Python 数据模型
 
