@@ -57,5 +57,3 @@ class Vector2d(object):
         type_code = chr(octets[0])
         memv = memoryview(octets[1:]).cast(type_code)
         return cls(*memv)
-
-
