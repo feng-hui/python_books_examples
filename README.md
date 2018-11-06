@@ -86,35 +86,27 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 只要用户在类中实现了魔术方法__call__即可让对应的类可以像函数一样被调用,可以通过内置函数callable()来检测是否可以被调用。
 
-[ch05_bingo](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_bingocall.py)
+* [ch05_bingo.py](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_bingocall.py)
 
 2、仅限关键字参数的用法(keyword-only)
 
 通过一个生成含有一个标签或多个标签的html来说明关键词参数是如何使用的。同时通过function(a, *, b)函数强制传入形参b，实际参数类似b=2。
 
-[ch05_keyword_only-argument](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_keyword_only.py)
+* [ch05_keyword_only-argument.py](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_keyword_only.py)
 
 3、[函数内省](https://segmentfault.com/q/1010000012595419)的用法
 
 通过dir()函数可以获得一个函数所有的方法、属性、参数值等，这些方法或属性或值表示函数有什么功能。
 
-[ch05_introspection_function](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_introspection_function.py)
+* [ch05_introspection_function.py](https://github.com/feng-hui/fluent_python_examples/blob/master/ch05_introspection_function.py)
 
 #### chapter06 使用一等函数实现设计模式
 
-1、order 购物订单模型(经典"策略模式")
+* 经典的“策略”模式，使用[“策略”设计模式](https://baike.baidu.com/item/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/646307?fr=aladdin)处理订单折扣
 
-经典的“策略”模式，使用[“策略”设计模式](https://baike.baidu.com/item/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/646307?fr=aladdin)处理订单折扣
+* [ch06_order.py](https://github.com/feng-hui/fluent_python_examples/blob/master/ch06_order.py) order 购物订单模型(经典"策略模式")
 
-[ch06_order](https://github.com/feng-hui/fluent_python_examples/blob/master/ch06_order.py)
-
-2、another_oder 使用一等函数实现"策略模式"
-
-使用一等函数替代ch06_order中的类来简化“策略”模式
-
-[ch06_another_order](https://github.com/feng-hui/fluent_python_examples/blob/master/ch06_another_order.py)
-
-#### chapter07 使用一等函数实现设计模式
+* [ch06_another_order.py](https://github.com/feng-hui/fluent_python_examples/blob/master/ch06_another_order.py) another_oder 使用一等函数实现"策略模式",使用一等函数替代ch06_order中的类来简化“策略”模式
 
 #### chapter07 使用一等函数实现设计模式
 
@@ -145,4 +137,8 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 * (2) [ch09_vector2d_03.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_vector2d_03.py) 向量类的可散列、私有属性的使用以及`__slots__`的使用
 
 * (3) [ch09_the_difference_of_staticmethod_and_classmethod.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_09/ch09_the_difference_of_staticmethod_and_classmethod.py) classmethod和staticmethod的使用
+
+#### chapter10  序列的修改、散列和切片
+
+* (1) [ch10_vector_v1.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_10/ch10_vector_v1.py) `ch09_vector2d.py`的衍生版，重构了类的初始化方法与repr的输出形式等
 
