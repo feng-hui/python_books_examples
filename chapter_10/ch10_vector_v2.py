@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# @time   : 2018-11-05 22:11
-# @author : feng hui
+# @time   : 2018-11-09 21:21
+# @author : feng_hui
 # @email  : capricorn1203@126.com
 import reprlib
 from array import array
 from math import sqrt
+import numbers
 
 
 class Vector(object):
-
     type_code = 'd'
 
     def __init__(self, components):
@@ -17,6 +17,22 @@ class Vector(object):
 
     def __iter__(self):
         return iter(self._components)
+
+    def __len__(self):
+        return len(self._components)
+
+    # def __getitem__(self, item):
+    #     return self._components[item]
+
+    def __getitem__(self, item):
+        cls = type(self)
+        if isinstance(item, slice):
+            return cls(self._components[item])
+        elif isinstance(item, numbers.Integral):
+            return self._components[item]
+        else:
+            msg = '{cls.__name__} indices must be integers'
+            raise TypeError(msg.format(cls=cls))
 
     def __repr__(self):
         """
@@ -32,7 +48,7 @@ class Vector(object):
 
     def __bytes__(self):
         return (
-            bytes([ord(self.type_code)]) + bytes(self._components)
+                bytes([ord(self.type_code)]) + bytes(self._components)
         )
 
     def __eq__(self, other):
