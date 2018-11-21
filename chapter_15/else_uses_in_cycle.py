@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # @time   : 2018-11-20 22:09
-# @author : feng_hui
+# @author : FF
 # @email  : capricorn1203@126.com
 import collections
 
