@@ -7,6 +7,7 @@ import abc
 
 
 class Tombola(abc.ABC):
+    """定义并使用一个抽象基类"""
 
     @abc.abstractmethod
     def load(self, iterable):
