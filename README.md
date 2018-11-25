@@ -142,3 +142,6 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 * (1) [ch10_vector_v1.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_10/ch10_vector_v1.py) `ch09_vector2d.py`的衍生版，重构了类的初始化方法与repr的输出形式等
 
+* (2) [ch10_vector_v2.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_10/ch10_vector_v2.py) 在（1）的基础上，动态获取属性
+
+
