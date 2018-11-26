@@ -144,4 +144,18 @@ __missing__ 主要使用在字典查询键值找不到键值的时候
 
 * (2) [ch10_vector_v2.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_10/ch10_vector_v2.py) 在（1）的基础上，动态获取属性
 
+#### chapter11 接口：从协议到抽象基类
 
+
+
+#### chapter12
+
+#### chapter15 上下文管理器和else块
+
+* (1) [ch15_else_uses_in_cycle.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_15/ch15_else_uses_in_cycle.py) `if`之外的else块，表示的意思均为：先做这个，再做那个(可以理解为then，要求循环或try语句中的代码块正常执行，不能中断或异常退出)
+
+* (2) [ch15_mirror.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_15/ch15_mirror.py) 普通的上下文管理器的用法,通过with语句镜像打印`print`中的信息
+
+* (3) [ch15_mirror_gen.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_15/ch15_mirror_gen.py) 通过生成器`yield`表达式构造的上下文管理器
+
+* (4) [ch15_mirror_gen_exc.py](https://github.com/feng-hui/fluent_python_examples/blob/master/chapter_15/ch15_mirror_gen.py) 处理通过生成器`yield`表达式构造的上下文管理器产生的异常信息
