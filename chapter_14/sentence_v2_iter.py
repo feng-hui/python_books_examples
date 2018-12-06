@@ -11,8 +11,7 @@ RE_WORD = re.compile(r'\w+')
 
 class Sentence:
     """
-    可迭代的对象
-    可迭代的对象__iter__
+    采用生成器函数替代v2中的【迭代器】类
     """
 
     def __init__(self, text):
