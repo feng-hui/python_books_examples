@@ -25,3 +25,4 @@
     * 生成器可以返回一个值，Python3.3之前的版本是不可以的，如果给return提供值，会抛出SyntaxError异常；
     * 新引入了`yield from`句法，使用它可以
 
+
