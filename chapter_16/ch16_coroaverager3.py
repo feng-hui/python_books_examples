@@ -9,6 +9,10 @@ Result = namedtuple('Result', 'count average')
 
 
 def averager():
+    """
+    子生成器
+    :return: 返回平均值
+    """
     total = 0.0
     count = 0
     average = None
@@ -23,11 +27,22 @@ def averager():
 
 
 def grouper(results, key):
+    """
+    委派生成器
+    :param results: 结果字典
+    :param key: 字典的key
+    :return: 获取自生成器的值返回给调用方
+    """
     while True:
         results[key] = yield from averager()
 
 
 def main(data: dict):
+    """
+    调用方,接收传入的参数字典,通过委派生成器中的yield from表达式对子生成器进行直接操作
+    :param data:
+    :return:
+    """
     results = {}
     for key, values in data.items():
         group = grouper(results, key)
@@ -40,6 +55,11 @@ def main(data: dict):
 
 
 def report(results: dict):
+    """
+    生成结果
+    :param results: 结果字典
+    :return: 打印结果
+    """
     for key, result in sorted(results.items()):
         group, unit = key.split(';')
         print('{:2} {:5} averaging {:.2f}{}'.format(
@@ -56,7 +76,6 @@ if __name__ == "__main__":
         'boys;kg':
             [39.0, 40.8, 43.2, 40.8, 43.1, 38.6, 41.4, 40.6, 36.3],
         'boys;m':
-            [1.38, 1.5, 1.32, 1.25, 1.37, 1.48, 1.25, 1.49, 1.46],
-}
+            [1.38, 1.5, 1.32, 1.25, 1.37, 1.48, 1.25, 1.49, 1.46]
+    }
     main(data_dt)
-
