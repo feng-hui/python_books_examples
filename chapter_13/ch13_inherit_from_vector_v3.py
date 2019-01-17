@@ -10,5 +10,20 @@ from itertools import zip_longest
 class AnotherVector(Vector):
 
     def __add__(self, other):
-        pairs = zip_longest(self. other, fillvalue=0.0)
+        pairs = zip_longest(self, other, fillvalue=0.0)
         return Vector(a + b for a, b in pairs)
+
+    def __mul__(self, scalar):
+        return Vector(n * scalar for n in self)
+
+    def __rmul__(self, scalar):
+        return self * scalar
+
+
+if __name__ == "__main__":
+    v1 = AnotherVector([1, 2, 3])
+    # print(v1)
+    # print(type(v1))
+    print(v1 + [1, 2, 3])
+    print(v1 * 10)
+    print(20 * v1)
