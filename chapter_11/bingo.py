@@ -12,6 +12,7 @@ class BingoCage(Tombola):
     def __init__(self, items):
         self._randomizer = random.SystemRandom()
         self._items = []
+        self.load(items)
 
     def load(self, items):
         self._items.extend(items)
@@ -19,7 +20,7 @@ class BingoCage(Tombola):
 
     def pick(self):
         try:
-            self._items.pop()
+            return self._items.pop()
         except IndexError:
             raise LookupError('pick from empty BingoCage')
 

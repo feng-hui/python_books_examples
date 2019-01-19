@@ -29,7 +29,7 @@ class Tombola(abc.ABC):
         items = []
         while True:
             try:
-                items.pop()
+                items.append(self.pick())
             except LookupError:
                 break
         self.load(items)
