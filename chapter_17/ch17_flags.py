@@ -15,7 +15,16 @@ BASE_URL = 'https://www.jikexueyuan.com/course/web/'
 
 DOWNLOAD_DIR = 'E:\\wksp\\fluent_python_examples\\chapter_17\\download'
 
-HEADERS = {
+
+def save_flag(img, file_name):
+    path = os.path.join(DOWNLOAD_DIR, file_name)
+
+    with open(path, 'wb') as f:
+        f.write(img)
+
+
+def get_flag():
+    headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -26,25 +35,25 @@ HEADERS = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                       '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
     }
-
-
-def save_flag(img, file_name):
-    path = os.path.join(DOWNLOAD_DIR, file_name)
-
-    with open(path, 'wb') as f:
-        f.write(img)
-
-
-def get_flag():
-    content = requests.get(BASE_URL, headers=HEADERS).text
+    content = requests.get(BASE_URL, headers=headers).text
     html = etree.HTML(content)
     images_urls = html.xpath('//img[@class="lessonimg"]/@src')
     return images_urls
 
 
 def get_one(url):
-    resp = requests.get(url, headers=HEADERS)
-    print(resp.status_code)
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'Host': 'a1.jikexueyuan.com',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                      '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
+    }
+    resp = requests.get(url, headers=headers)
     return resp.content
 
 
@@ -55,7 +64,7 @@ def show(text):
 
 def download_many():
     images_urls = get_flag()
-    for each_image_url in images_urls[0:1]:
+    for each_image_url in images_urls:
         img = get_one(each_image_url)
         file_name = each_image_url.split('/')[-1]
         show(file_name)
