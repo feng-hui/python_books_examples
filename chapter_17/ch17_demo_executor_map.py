@@ -3,7 +3,7 @@
 # @author FH
 # @email: capricorn1203@126.com
 # @time: 2019/1/22 18:44
-from time import time, strftime, sleep
+from time import strftime, sleep
 from concurrent import futures
 
 
@@ -22,13 +22,17 @@ def loiter(n):
 
 
 def main():
-    with futures.ThreadPoolExecutor(max_workers=3) as executor:
-        results = executor.map(loiter, range(5))
+
+    # with futures.ThreadPoolExecutor(max_workers=3) as executor:
+    #     results = executor.map(loiter, range(5))
+
+    executor = futures.ThreadPoolExecutor(max_workers=3)
+    results = executor.map(loiter, range(5))
     display('results: ', results)
     display('Waiting for individual results:')
     for i, result in enumerate(results):
-        pass
+        display('result {}: {}'.format(i, result))
 
 
 if __name__ == "__main__":
-    pass
+    main()
