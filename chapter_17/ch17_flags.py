@@ -3,7 +3,6 @@
 # @author FH
 # @email: capricorn1203@126.com
 # @time: 2019/1/21 19:16
-import datetime
 import os
 import sys
 import time
