@@ -29,13 +29,9 @@ def download_many(url_list):
 
 
 if __name__ == "__main__":
-    # f_n = __file__.split('/')[-1]
-    # print('>>>>>> [{}] Start scrawling page...'.format(f_n))
-    # img_urls = get_flag()
-    # print('>>>>>> [{}] Start downloading pictures by thread pool...'.format(f_n))
-    # main(download_many, img_urls)
-    # print('>>>>>> [{}] Download End...'.format(f_n))
-    import re
-    res = re.search('bi', 'bike')
-    if res:
-        print(res.end())
+    f_n = __file__.split('/')[-1]
+    print('>>>>>> [{}] Start scrawling page...'.format(f_n))
+    img_urls = get_flag()
+    print('>>>>>> [{}] Start downloading pictures by thread pool...'.format(f_n))
+    main(download_many, img_urls)
+    print('>>>>>> [{}] Download End...'.format(f_n))
