@@ -22,7 +22,7 @@ def get_one(url):
                       '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
     }
     resp = yield from aiohttp.request('GET', url, headers=headers)
-    image = yield from resp.read_and_close()
+    image = yield from resp.read()
     return image
 
 
