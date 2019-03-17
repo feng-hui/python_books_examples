@@ -9,6 +9,9 @@ from collections import abc
 class FrozenJSON:
     """
     一个只读接口，使用属性表示法访问JSON类对象
+    FrozenJson只有一个__init__方法和一个实例属性__data
+    当访问其他属性时，会调用__getattr__方法报错
+    所以这个类并不会打印json的键值
     """
 
     def __init__(self, mapping):
@@ -38,4 +41,4 @@ class FrozenJSON:
 
 if __name__ == "__main__":
     fj = FrozenJSON({'name': 'name111', 'class': 'class111'})
-    print(fj.name)
+    print(fj.name2)

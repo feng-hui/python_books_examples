@@ -9,7 +9,7 @@
     >> if CONFERENCE not in db:
     ...     load(db)
     ...
-    
+
     >> DbRecord.set_db(db)
     >> event = DbRecord.fetch('event.33950')
     >> event
