@@ -15,9 +15,14 @@ from collections import namedtuple
 
 Result = namedtuple('Result', 'status data')
 
-HTTPStatus = Enum('Status', 'ok not_found error')
 
-POP20_CC = 'web'.split()
+class HTTPStatus(Enum):
+    ok = 1
+    not_found = 2
+    error = 3
+
+
+POP20_CC = 'ai'.split()
 
 DOWNLOAD_DIR = 'E:\\wksp\\fluent_python_examples\\chapter_17\\download'  # download dir
 
@@ -28,8 +33,10 @@ COUNTRY_CODES_FILE = 'country.txt'  # country codes file for all cc
 
 BASE_URL = 'https://www.jikexueyuan.com/course/{}/'
 
+A_Z = string.ascii_uppercase  # 26 capital letters
 
-def get_urls_list():
+
+def get_urls_list(url):
     """get all urls in the page"""
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -42,7 +49,7 @@ def get_urls_list():
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                       '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'
     }
-    content = requests.get(BASE_URL, headers=headers).text
+    content = requests.get(url, headers=headers).text
     html = etree.HTML(content)
     images_urls = html.xpath('//img[@class="lessonimg"]/@src')
     return images_urls
@@ -66,7 +73,7 @@ def initial_report(cc_list, actual_req):
     print initial report when downloading flags
     :param cc_list: cc list
     :param actual_req: actual req numbers
-    :param server_label: server label of the SERVERS
+    # :param server_label: server label of the SERVERS
     :return: None
     """
     if len(cc_list) <= 10:
@@ -82,10 +89,9 @@ def initial_report(cc_list, actual_req):
     print(msg.format(actual_req, plural))
 
 
-def final_report(cc_list, counter, start_time):
+def final_report(counter, start_time):
     """
     final report
-    :param cc_list: cc list
     :param counter: counter object
     :param start_time: start time
     :return:None
@@ -115,7 +121,6 @@ def expand_cc_args(every_cc, all_cc, cc_args, limit):
     :return:
     """
     codes = set()
-    A_Z = string.ascii_uppercase
     if every_cc:
         codes.update(a+b for a in A_Z for b in A_Z)
     elif all_cc:
@@ -203,11 +208,12 @@ def process_args(default_concur_req):
 
 def main(download_many, default_concur_req, max_concur_erq):
     args, cc_list = process_args(default_concur_req)
+    cc_list = get_urls_list(cc_list[0])
     actual_req = min(default_concur_req, max_concur_erq, len(cc_list))
     initial_report(cc_list, actual_req)
     # base_url = SERVERS[args.server]
     t0 = time.time()
     counter = download_many(cc_list, args.verbose, actual_req)
-    assert sum(counter.values() == len(cc_list),
-               'some download are unaccounted for')
-    final_report(cc_list, counter, t0)
+    assert sum(counter.values()) == len(cc_list), \
+        'some download are unaccounted for'
+    final_report(counter, t0)

@@ -6,9 +6,10 @@
 import requests
 import tqdm
 from collections import Counter
-from ch17_flags2_common import (BASE_URL, HTTPStatus, Result, save, main,
-                                 DEFAULT_CONCURRENT, MAX_CONCURRENT)
-
+from ch17_flags2_common import (
+    HTTPStatus, Result, save, main,
+    DEFAULT_CONCURRENT, MAX_CONCURRENT
+)
 
 
 def get_one(url, verbose=False):
@@ -57,14 +58,14 @@ def download_many(cc_list, verbose, max_req):
         except requests.exceptions.HTTPError as exc:
             error_msg = 'HTTP error {res.status_code} - {res.reason}'
             error_msg = error_msg.format(res=exc.response)
+            status = HTTPStatus.error
         except requests.exceptions.ConnectionError as exc:
+            print(exc.args[0])
             error_msg = 'Connection error'
+            status = HTTPStatus.error
         else:
             error_msg = ''
             status = res.status
-
-        if error_msg:
-            status = HTTPStatus.error
 
         counter[status] += 1
 
