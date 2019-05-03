@@ -37,4 +37,11 @@ for date, item in groupby(rows, key=itemgetter('date')):
         print(i)
 
 # 通过defaultdict
-# rows_by_date =
+print('----------------------another method-------------------------')
+rows_by_date = defaultdict(list)
+for row in rows:
+    rows_by_date[row['date']].append(row)
+for date, items in rows_by_date.items():
+    print(date)
+    for i in items:
+        print(i)
