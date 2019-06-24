@@ -6,18 +6,18 @@
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
-import my_module
+import mymodule
 
 
 class TestUrlPrint(TestCase):
     def test_url_gets_to_stdout(self):
         protocol = 'http'
         host = 'www'
-        domain = 'example'
-        expected_url = url = '{}://{}.{}\n'.format(protocol, host, domain)
+        domain = 'example.com'
+        expected_url = '{}://{}.{}\n'.format(protocol, host, domain)
 
         with patch('sys.stdout', new=StringIO()) as fake_out:
-            my_module.url_print(protocol, host, domain)
+            mymodule.url_print(protocol, host, domain)
             self.assertEqual(fake_out.getvalue(), expected_url)
 
 
