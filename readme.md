@@ -7,3 +7,4 @@
 
 * 书籍1：Fluent Python（流畅的python）
 * 书籍2：Python Cookbook
+* 书籍3：鸟哥的Linux私房菜
