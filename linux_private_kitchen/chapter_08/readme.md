@@ -111,3 +111,66 @@ tar -jcv -f /root/system.tar.bz2 --exclude=/root/etc* --exclude=/root/system.tar
 * 基本名称：tarfile、tarball，通过tar只打包的文件称为tarfile(`tar -cv file.tar`)；如果同时进行了压缩，那么称为tarball(`tar -zcv -f file.tar.gz`)。
 * 特殊应用：通过标准输入与输出的数据留重导向以及管线命令的方式，将待处理的文件一边打包一边解压缩到指定目录中。(`cd /tmp;tar -cvf - /etc | tar -xvf -`)(第一个-表示标准输出，第二个-表示标准输入，可以将 - 理解为内存中的一个缓冲区之类的概念。)
 
+##### 8.4、XFS文件系统的备份与还原（了解）
+
+* XFS文件系统备份：xfsdump
+* XFS文件系统还原：xfsrestore
+
+##### 8.5、光盘写入工具（了解）
+
+* mkisofs: 建立映像挡
+* cdrecord： 光盘刻录工具
+
+##### 8.6、其他常见的压缩与备份工具
+
+（1）dd
+
+语法如下：
+
+```
+# dd if-'uboyt_file' of='output_file' bs="block_size" count="number"
+
+# 选项与参数
+if：input file
+of：output file
+bs：设置的block大小，未设置默认未5120bytes
+count：bs的个数
+
+# 例如
+dd if=/etc/passwd of=/tmp/passwd.back
+```
+
+（2）cpio
+
+> cpio可以备份任何文档，cpio需要搭配find来使用，因为cpio不会主动去找到文件进行备份。
+
+语法如下：
+
+```
+# 备份
+cpio -ovcB > [file|device]
+-o(--create): 创建存档（以副本模式运行）
+-v: 详细地列出被处理地文档
+-c: 以portable format方式进行存储
+-B：将I/O块大小设置为5120字节
+
+# 还原
+cpio -ivcdu < [file|device]
+-i: 从存档中提取文件（以拷入模式运行）
+-d: 自动建立目录
+-u：无条件替换所有文件
+
+# 查看
+cpio -ivct < [file|device]
+-t：配合-i查看压缩文档里地内容
+```
+
+例如：
+```
+find services | cpio -ovcB > service.cpio
+cpio -ivct < service.cpio
+
+# 查看文件类型
+>>> file service.cpio
+>>> service.cpio: ASCII cpio archive (SVR4 with no CRC)
+```
