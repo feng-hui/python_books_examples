@@ -185,6 +185,22 @@ B、环境设定
 
 C、vim的默认值一般放在在/etc/vimrc这个文件里，可以通过新建或修改~/.vimrc（当前用户下）文件来自行设置想要设置的参数
 
+例如：
+
+```
+vi ~/.vimrc
+
+# 内容如下
+set hlsearch
+set backspace=2
+set autoindent
+set ruler
+set showmode
+set nu
+set bg=dark
+syntax on
+```
+
 ##### 9.4、其他注意事项
 
 （1）中文编码问题
@@ -197,3 +213,57 @@ C、vim的默认值一般放在在/etc/vimrc这个文件里，可以通过新建
 * Linux下只有LF($)一个符号
 
 Linux下如果执行shell脚本，判断两条指令的依据是Enter，Linux的Enter为LF符号，而DOS下生成的文件的换行符为CRLF（多个^M），这样脚本就无法执行。
+
+（2）编码转换（dos2unix、unix2dos）
+
+```
+# 语法介绍如下
+dos2unix/unix2dos [-kn] file [newfile]
+
+-k 表示保留该文件原本的mtime时间格式（不更新文件上次内容经过修订的时间）
+-n 保留原本的文档内，将转换后的内容输出到新文件
+
+# 例子
+
+mkdir /home/**
+
+cp -a /etc/man.config .
+
+# unix2dos
+
+unix2dos -k man.config
+dos2unix -k -n man.config man.config.linux
+```
+
+（3）语系编码转换
+
+A、语法介绍
+
+```
+iconv -f 原本编码 -t 新编码 filename [-o newfile]
+
+--list/-l   列出iconv支持的所有语系
+-f          from，表示原本的编码
+-t          to，表示要更改为什么编码
+-o          输出到一个新的文件
+```
+
+B、语系编码转换例子
+
+```
+# 下载文件到当前目录
+wget http://linux.vbird.org/linux_basic/0310vi/vi.big5
+
+# 转换编码格式为utf8并存储为新的文件
+iconv -f big5 vi.big5 -t utf8 -o vi.utf8
+
+# 通过file命令查看文件为什么格式
+file vi*
+
+# 查看的结果如下
+>>> vi.big5: ISO-8859 text, with CRLF line terminators
+>>> vi.utf8: UTF-8 Unicode text, with CRLF line terminators
+
+# 将繁体转换为简体
+iconv -f utf8 -t big5 vi.utf8 | iconv -f big5 -t gb2312 | iconv -f gb2312 -t utf8 -o vi.gb.utf8
+```
